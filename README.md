@@ -6,4 +6,4 @@ introduction-to-recommender-systems
 
 - ***recSys.m***
 
-- ***makeRatingsMatrix.m*** receives as input a CSV file with 3 columns: the IDs of users, the IDs of the movies they watched, and the movie ratings that they provided. (For users who rated more than one movie, their IDs repeat across rows.) The script creates a *users* x *movie* ratings matrix, a building block of many recommender systems.
+- ***makeRatingsMatrix.m*** is a function that receives as input a CSV file with 3 columns: the IDs of users, the IDs of the movies they watched, and the movie ratings that they provided. (For users who rated more than one movie, their IDs repeat across rows.) The script creates a *users* x *movie* ratings matrix, a building block of many recommender systems.
