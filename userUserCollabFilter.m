@@ -10,7 +10,7 @@ ratings = data.data;
 
 % Create movie matrix
 movies = data.textdata(2:end, 1);
-nMovie = size(movies, 1);
+nMovie = length(movies);
 
 % Create users matrix by parsing their IDs from the input data
 nUser = size(ratings, 2);
@@ -24,7 +24,7 @@ r = corr(ratings, 'rows', 'pairwise') - eye(nUser);
 
 % Declare recommendation recipients
 recip = [3867 860];
-nRecip = size(recip, 2);
+nRecip = length(recip);
 
 % Initialize empty output matrix
 outMat = nan(nRecip * nRec, 2, 2);
