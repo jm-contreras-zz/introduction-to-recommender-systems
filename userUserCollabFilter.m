@@ -92,7 +92,3 @@ for ir = 1:nRecip
     end
     
 end
-
-% Write output matrix
-dlmwrite('rec.txt', outMat(:, :, 1), ' ');
-dlmwrite('rec_norm.txt', outMat(:, :, 2), ' ');
