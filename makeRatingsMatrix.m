@@ -13,8 +13,8 @@ unqUser = unique(u);
 unqMovie = unique(m);
 
 % Count them
-nUser = size(unqUser, 1);
-nMovie = size(unqMovie, 1);
+nUser = length(unqUser);
+nMovie = length(unqMovie);
 
 % Initialize an empty ratings matrix
 ratingsMatrix = nan(nUser, nMovie);
