@@ -1,11 +1,12 @@
+function ratingsMatrix = makeRatingsMatrix(file)
+
 % Load data of user IDs, movie IDs, and ratings
-data = csvread('recsys-data-ratings.csv');
+data = csvread(file);
 
 % Parse the data into users, movies, and ratings variables
 u = data(:, 1); % Users
 m = data(:, 2); % Movies
 r = data(:, 3); % Ratings
-clear data
 
 % Identify unique users and movies
 unqUser = unique(u);
