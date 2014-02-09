@@ -37,6 +37,3 @@ for iu = 1:nUser
     end
     
 end
-
-% Save complete ratings matrix
-save('ratingsMatrix', ratingsMatrix);
