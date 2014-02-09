@@ -1,4 +1,4 @@
-function ratingsMatrix = makeRatingsMatrix(file)
+function [ratingsMatrix, unqMovie] = makeRatingsMatrix(file)
 
 % Load data of user IDs, movie IDs, and ratings
 data = csvread(file);
