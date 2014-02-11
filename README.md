@@ -4,6 +4,6 @@ introduction-to-recommender-systems
 
 - ***userUserCollabFilter.m*** employs a user-user [collaborative filter](http://en.wikipedia.org/wiki/Collaborative_filtering) to recommend movies. It receives as input a *movie* x *users* ratings matrix and parameters that specify the recipients and number of recommendations as well as the size of the similarity neighborhood. The algorithm uses correlation-weighted average ratings with and without normalization to make its recommendations.
 
-- ***recSys.m***
+- ***assocRec.m*** is a product association recommender that receives the *users* x *movie* matrix output by ***makeRatingsMatrix.m*** and, for a given movie with ratings, recommends other movies rated by the same users. The script produces a second set of recommendations that control for the popularity of the recommended movies.
 
-- ***makeRatingsMatrix.m*** defines a function that receives as input a CSV file with 3 columns: the IDs of users, the IDs of the movies they watched, and the movie ratings that they provided. (For users who rated more than one movie, their IDs repeat across rows.) The function outputs a *users* x *movie* ratings matrix for use by ***recSys.m***.
+- ***makeRatingsMatrix.m*** defines a function that receives as input a CSV file with 3 columns: the IDs of users, the IDs of the movies they watched, and the movie ratings that they provided. (For users who rated more than one movie, their IDs repeat across rows.) The function outputs a *users* x *movie* ratings matrix for use by ***assocRec.m***.
