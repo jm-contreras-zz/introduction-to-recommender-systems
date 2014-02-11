@@ -1,3 +1,6 @@
+% Declare filter parameter
+nRec = 5; % Number of recommendations
+
 % Load ratings matrix (users x movies)
 [ratingsMatrix, movieID] = makeRatingsMatrix('recsys-data-ratings.csv');
 
@@ -8,7 +11,6 @@ ratingsMatrix = ~isnan(ratingsMatrix);
 target = [3049 107 1891];
 
 % Movie declarations
-nSimilar = 5;
 nTarget = length(target);
 nTotalMovie = length(movieID);
 
@@ -30,14 +32,14 @@ for m = 1:nTarget
     propBoth = sum(ratingsMatrix & ratedMatrix) / sum(rated);
     propBoth(movieInd) = [];
     [sortPropBoth sortInd] = sort(propBoth, 'descend');
-    top.both.prop{m} = sortPropBoth(1:nSimilar);
-    top.both.movies{m} = movieID(sortInd(1:nSimilar))';
+    top.both.prop{m} = sortPropBoth(1:nRec);
+    top.both.movies{m} = movieID(sortInd(1:nRec))';
     
     % ...normalize by proportion of users who did not watch target movie
     propOthers = sum(ratingsMatrix & ~ratedMatrix) / sum(~rated);
     propOthers(movieInd) = [];
     [sortPropOthers sortInd] = sort(propBoth ./ propOthers, 'descend');
-    top.others.prop{m} = sortPropOthers(1:nSimilar);
-    top.others.movies{m} = movieID(sortInd(1:nSimilar))';
+    top.others.prop{m} = sortPropOthers(1:nRec);
+    top.others.movies{m} = movieID(sortInd(1:nRec))';
     
 end
